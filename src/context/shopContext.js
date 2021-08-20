@@ -19,19 +19,18 @@ class ShopProvider extends Component {
       isMenuOpen: false
     };
   }
-  
 
   componentDidMount() {
     if (localStorage.checkout_id) {
-      this.fetchCheckout(localStorage.checkout_id)
+      this.fetchCheckout(localStorage.checkout_id);
     } else {
-      this.createCheckout()
+      this.createCheckout();
     }
   }
 
   createCheckout = async () => {
     const checkout = await client.checkout.create();
-    localStorage.setItem("checkout_id", checkout.id)
+    localStorage.setItem('checkout_id', checkout.id);
     this.setState({ checkout: checkout });
   };
 
@@ -69,22 +68,22 @@ class ShopProvider extends Component {
   openMenu = () => {};
 
   render() {
-
     return (
-      <ShopContext.Provider 
-      value={{
-        ...this.state,
-        fetchAllProducts: this.fetchAllProducts,
-        fetchProductWithHandle: this.fetchProductWithHandle, 
-        addItemToCheckout: this.addItemToCheckout, 
-        removeLineItem: this.removeLineItem, 
-        closeCart: this.closeCart, 
-        openCart: this.openCart,
-        openMenu: this.openMenu
-      }}>
+      <ShopContext.Provider
+        value={{
+          ...this.state,
+          fetchAllProducts: this.fetchAllProducts,
+          fetchProductWithHandle: this.fetchProductWithHandle,
+          addItemToCheckout: this.addItemToCheckout,
+          removeLineItem: this.removeLineItem,
+          closeCart: this.closeCart,
+          openCart: this.openCart,
+          closeMenu: this.closeMenu,
+          openMenu: this.openMenu
+        }}>
         {this.props.children}
       </ShopContext.Provider>
-    )
+    );
   }
 }
 

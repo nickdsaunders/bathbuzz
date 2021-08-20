@@ -1,4 +1,7 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Box, Grid, Text, Image } from 'theme-ui';
+
 import { ShopContext } from '../context/shopContext';
 
 const Home = () => {
@@ -8,14 +11,22 @@ const Home = () => {
     fetchAllProducts();
   }, [fetchAllProducts]);
 
+  console.log(products);
+
   if (!products) return <div>Loadings...</div>;
 
   return (
-    <div>
-      {products.map((product) => (
-        <h1 key={product.title}>{product.title}</h1>
-      ))}
-    </div>
+    <Box>
+      <Grid columns={[1, 2, 3]} gap={3}>
+        {products.map((product) => (
+          <Link to={`/products/${product.handle}`} key={product.id}>
+            <Image src={product.images[0].src} />
+            <Text>{product.title}</Text>
+            <Text>${product.variants[0].price}</Text>
+          </Link>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
