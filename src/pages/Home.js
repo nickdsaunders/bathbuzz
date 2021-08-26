@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Grid, Text, Image, Card } from 'theme-ui';
-
 import { ShopContext } from '../context/shopContext';
 
 const Home = () => {
@@ -20,10 +19,7 @@ const Home = () => {
       <Grid columns={[1, 2, 3]} gap={3}>
         {products.map((product) => (
           <Link to={`/products/${product.handle}`} key={product.id}>
-            <Card
-              sx={{
-                variant: 'primary'
-              }}>
+            <Card variant="interactive">
               <Image src={product.images[0].src} />
               <Text>{product.title}</Text>
               <Text>${product.variants[0].price}</Text>
