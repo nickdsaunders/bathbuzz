@@ -4,7 +4,8 @@ import { Flex, Text, Image, IconButton, MenuButton } from 'theme-ui';
 import { MdMenu, MdShoppingCart } from 'react-icons/md';
 
 const NavBar = () => {
-  const { openCart, openMenu, chekcout } = useContext(ShopContext);
+  const { toggleCart, isCartOpen, openMenu, chekcout } =
+    useContext(ShopContext);
 
   return (
     <Flex
@@ -14,13 +15,17 @@ const NavBar = () => {
         p: 4,
         bg: 'smoke'
       }}>
-      <IconButton as={MdMenu} sx={{ fill: 'slate' }} />
+      <IconButton as={MdMenu} variant="icon" />
       <Image
         src="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/Logologo_1.svg?v=1610055540"
         w={100}
         h={100}
       />
-      <IconButton as={MdShoppingCart} sx={{ fill: 'slate' }} />
+      <IconButton
+        as={MdShoppingCart}
+        variant="icon"
+        onClick={() => toggleCart()}
+      />
     </Flex>
   );
 };

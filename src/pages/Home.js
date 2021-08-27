@@ -10,8 +10,6 @@ const Home = () => {
     fetchAllProducts();
   }, [fetchAllProducts]);
 
-  console.log(products);
-
   if (!products) return <div>Loadings...</div>;
 
   return (

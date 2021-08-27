@@ -43,7 +43,21 @@ class ShopProvider extends Component {
       .catch((error) => console.log(error));
   };
 
-  addItemToCheckout = async () => {};
+  addItemToCheckout = async (variantId, quantity) => {
+    const lineItemsToAdd = [
+      {
+        variantId,
+        quantity: parseInt(quantity)
+      }
+    ];
+    const checkout = await client.checkout.addLineItems(
+      this.state.checkout.id,
+      lineItemsToAdd
+    );
+    this.setState({ checkout: checkout });
+
+    this.openCart();
+  };
 
   removeLineItem = async () => {};
 
@@ -59,9 +73,19 @@ class ShopProvider extends Component {
     return product;
   };
 
-  closeCart = () => {};
+  toggleCart = () => {
+    this.setState((prevState) => {
+      return { isCartOpen: !prevState.isCartOpen };
+    });
+  };
 
-  openCart = () => {};
+  // closeCart = () => {
+  //   this.setState({ isCartOpen: false });
+  // };
+
+  openCart = () => {
+    this.setState({ isCartOpen: true });
+  };
 
   closeMenu = () => {};
 
@@ -76,10 +100,11 @@ class ShopProvider extends Component {
           fetchProductWithHandle: this.fetchProductWithHandle,
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
-          closeCart: this.closeCart,
+          // closeCart: this.closeCart,
           openCart: this.openCart,
           closeMenu: this.closeMenu,
-          openMenu: this.openMenu
+          openMenu: this.openMenu,
+          toggleCart: this.toggleCart
         }}>
         {this.props.children}
       </ShopContext.Provider>

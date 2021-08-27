@@ -68,7 +68,15 @@ const Theme = {
     card: '0 4px 8px rgba(0, 0, 0, 0.125)',
     elevated: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125)'
   },
-
+  buttons: {
+    primary: {
+      cursor: 'pointer'
+    },
+    icon: {
+      fill: 'white',
+      cursor: 'pointer'
+    }
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -124,11 +132,24 @@ const Theme = {
       borderBottomStyle: 'solid'
     }
   },
+  layout: {
+    box: {
+      drawer: {
+        height: '100%',
+        bg: 'red',
+        boxShadow: 'card',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '400px'
+      }
+    }
+  },
   cards: {
     primary: {
       bg: 'elevated',
       color: 'text',
-      p: [3, 4],
+      p: [3],
       borderRadius: 'extra',
       boxShadow: 'card',
       overflow: 'hidden'
