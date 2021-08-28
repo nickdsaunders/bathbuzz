@@ -70,10 +70,15 @@ const Theme = {
   },
   buttons: {
     primary: {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      bg: 'blue'
     },
     icon: {
       fill: 'white',
+      cursor: 'pointer'
+    },
+    close: {
+      color: 'black',
       cursor: 'pointer'
     }
   },
@@ -136,12 +141,18 @@ const Theme = {
     box: {
       drawer: {
         height: '100%',
-        bg: 'red',
+        bg: 'smoke',
         boxShadow: 'card',
         position: 'fixed',
         top: 0,
         left: 0,
         width: '400px'
+      }
+    },
+    flex: {
+      cartItems: {
+        alignItems: 'center',
+        justifyContent: 'center'
       }
     }
   },

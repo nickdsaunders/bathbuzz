@@ -59,7 +59,13 @@ class ShopProvider extends Component {
     this.openCart();
   };
 
-  removeLineItem = async () => {};
+  removeLineItem = async (lineItemIdsToRemove) => {
+    const checkout = await client.checkout.removeLineItems(
+      this.state.checkout.id,
+      lineItemIdsToRemove
+    );
+    this.setState({ checkout: checkout });
+  };
 
   fetchAllProducts = async () => {
     const products = await client.product.fetchAll();
