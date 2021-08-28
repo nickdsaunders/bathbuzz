@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ShopProvider from './context/shopContext'
+import ShopProvider from './context/shopContext';
+import { ThemeProvider } from 'theme-ui';
+import theme from './theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ShopProvider>
-      <App />
-    </ShopProvider>
+    <ThemeProvider theme={theme}>
+      <ShopProvider>
+        <App />
+      </ShopProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
