@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../context/shopContext';
-import { Box, Text, Container } from 'theme-ui';
+import { Box, Text, Container, Heading, Grid } from 'theme-ui';
 
 const Cart = () => {
   const { isCartOpen, closeCart, checkout, removeLineItem } =
@@ -10,7 +10,15 @@ const Cart = () => {
     <>
       {isCartOpen && (
         <Box sx={{ variant: 'layout.box.drawer' }}>
-          <Text>This is the Cart</Text>
+          <Heading>This is the Cart</Heading>
+          <Container>
+            {checkout.lineItems &&
+              checkout.lineItems.map((item) => (
+                <Grid columns={[4]} gap={1} keys={item.id}>
+                  <Text>{item.title}</Text>
+                </Grid>
+              ))}
+          </Container>
         </Box>
       )}
     </>
