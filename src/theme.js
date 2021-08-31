@@ -141,12 +141,23 @@ const Theme = {
     box: {
       drawer: {
         height: '100%',
-        bg: 'smoke',
+        bg: 'elevated',
         boxShadow: 'card',
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '400px'
+        width: '70%',
+        maxWidth: '400px',
+        zIndex: 2
+      },
+      drawerBackdrop: {
+        position: 'fixed',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        bg: '#00000090',
+        zIndex: 1
       }
     },
     flex: {
@@ -160,7 +171,7 @@ const Theme = {
     primary: {
       bg: 'elevated',
       color: 'text',
-      p: [3],
+      p: 3,
       borderRadius: 'extra',
       boxShadow: 'card',
       overflow: 'hidden'

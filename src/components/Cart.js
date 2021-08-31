@@ -14,7 +14,7 @@ import {
 } from 'theme-ui';
 
 const Cart = () => {
-  const { isCartOpen, closeCart, checkout, removeLineItem } =
+  const { isCartOpen, closeCart, checkout, removeLineItem, toggleCart } =
     useContext(ShopContext);
 
   console.log(checkout);
@@ -23,8 +23,16 @@ const Cart = () => {
     <>
       {isCartOpen && (
         <Box sx={{ variant: 'layout.box.drawer' }}>
-          <Heading>This is the Cart</Heading>
-          <Container>
+          <Flex
+            as="header"
+            sx={{
+              justifyContent: 'space-around',
+              flexDirection: 'row'
+            }}>
+            <Heading>This is the Cart</Heading>
+            <Close onClick={() => toggleCart()} />
+          </Flex>
+          <Container as="body">
             {checkout.lineItems &&
               checkout.lineItems.map((item) => (
                 <Grid columns={4} gap={1} key={item.id}>

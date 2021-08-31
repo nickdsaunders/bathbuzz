@@ -13,7 +13,7 @@ const NavBar = () => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         p: 4,
-        bg: 'smoke'
+        bg: 'purple'
       }}>
       <IconButton as={MdMenu} variant="icon" />
       <Image
