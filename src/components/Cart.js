@@ -12,50 +12,68 @@ import {
   Button,
   Link
 } from 'theme-ui';
+import Background from './Background';
 
 const Cart = () => {
-  const { isCartOpen, closeCart, checkout, removeLineItem, toggleCart } =
+  const { isCartOpen, checkout, removeLineItem, toggleCart } =
     useContext(ShopContext);
 
   console.log(checkout);
 
   return (
     <>
-      {isCartOpen && (
-        <Box sx={{ variant: 'layout.box.drawer' }}>
-          <Flex
-            as="header"
-            sx={{
-              justifyContent: 'space-around',
-              flexDirection: 'row'
-            }}>
-            <Heading>This is the Cart</Heading>
-            <Close onClick={() => toggleCart()} />
-          </Flex>
-          <Container as="body">
-            {checkout.lineItems &&
-              checkout.lineItems.map((item) => (
-                <Grid columns={4} gap={1} key={item.id}>
-                  <Flex sx={{ variant: 'layout.flex.cartItems' }}>
-                    <Close onClick={() => removeLineItem(item.id)} />
-                  </Flex>
-                  <Flex sx={{ variant: 'layout.flex.cartItems' }}>
-                    <Image src={item.variant.image.src} />
-                  </Flex>
-                  <Flex sx={{ variant: 'layout.flex.cartItems' }}>
-                    <Text>{item.title}</Text>
-                  </Flex>
-                  <Flex sx={{ variant: 'layout.flex.cartItems' }}>
-                    <Text>{item.variant.price}</Text>
-                  </Flex>
-                </Grid>
-              ))}
-          </Container>
+      <Flex
+        variant={isCartOpen ? 'layout.flex.drawerOpen' : 'layout.flex.drawer'}>
+        <Flex
+          as="header"
+          sx={{
+            justifyContent: 'space-between',
+            flexDirection: 'row'
+          }}>
+          <Heading>This is the Cart</Heading>
+          <Close onClick={() => toggleCart()} />
+        </Flex>
+
+        <Flex
+          as="body"
+          sx={{
+            justifyContent: 'space-between',
+            flexDirection: 'column'
+          }}>
+          {checkout.lineItems?.length ? (
+            checkout.lineItems.map((item) => (
+              <Grid columns={4} gap={1} key={item.id}>
+                <Flex variant="layout.flex.cartItems">
+                  <Close onClick={() => removeLineItem(item.id)} />
+                </Flex>
+                <Flex variant="layout.flex.cartItems">
+                  <Image src={item.variant.image.src} />
+                </Flex>
+                <Flex variant="layout.flex.cartItems">
+                  <Text>{item.title}</Text>
+                </Flex>
+                <Flex variant="layout.flex.cartItems">
+                  <Text>{item.variant.price}</Text>
+                </Flex>
+              </Grid>
+            ))
+          ) : (
+            <div>Empty Cart</div>
+          )}
+        </Flex>
+
+        <Flex
+          as="footer"
+          sx={{
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
           <Button>
             <Link href={checkout.webUrl}>Checkout</Link>
           </Button>
-        </Box>
-      )}
+        </Flex>
+      </Flex>
+      <Background />
     </>
   );
 };

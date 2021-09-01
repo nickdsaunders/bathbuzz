@@ -8,10 +8,7 @@ const Background = () => {
   return (
     <>
       {isCartOpen && (
-        <Box
-          sx={{ variant: 'layout.box.drawerBackdrop' }}
-          onClick={() => toggleCart()}
-        />
+        <Box variant="layout.box.drawerBackdrop" onClick={() => toggleCart()} />
       )}
     </>
   );

@@ -139,17 +139,6 @@ const Theme = {
   },
   layout: {
     box: {
-      drawer: {
-        height: '100%',
-        bg: 'elevated',
-        boxShadow: 'card',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '70%',
-        maxWidth: '400px',
-        zIndex: 2
-      },
       drawerBackdrop: {
         position: 'fixed',
         width: '100%',
@@ -161,6 +150,26 @@ const Theme = {
       }
     },
     flex: {
+      drawer: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: '100%',
+        bg: 'elevated',
+        boxShadow: 'card',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '70%',
+        maxWidth: '400px',
+        zIndex: 2,
+        transform: 'translateX(-100%)',
+        transition: 'transform 0.3s ease-out',
+        padding: '3'
+      },
+      drawerOpen: {
+        variant: 'layout.flex.drawer',
+        transform: 'translateX(0)'
+      },
       cartItems: {
         alignItems: 'center',
         justifyContent: 'center'

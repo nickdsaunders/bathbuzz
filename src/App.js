@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Background from './components/Background';
 import Cart from './components/Cart';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
@@ -11,7 +10,7 @@ function App() {
       <Router>
         <NavBar />
         <Cart />
-        <Background />
+
         <Switch>
           <Route exact path="/">
             <Home />
