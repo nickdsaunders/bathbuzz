@@ -34,8 +34,8 @@ const Theme = {
     accent: '#338eda'
   },
   fonts: {
-    body: 'Poppins, sans-serif',
-    heading: 'Poppins, sans-serif',
+    body: 'Phantom Sans',
+    heading: 'Phantom Sans',
     monospace: 'Menlo, monospace'
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
@@ -50,9 +50,16 @@ const Theme = {
   },
   text: {
     heading: {
-      fontFamily: 'heading',
+      fontWeight: 'bold',
       lineHeight: 'heading',
-      fontWeight: 'heading'
+      mt: 0,
+      mb: 0
+    },
+    ultratitle: {
+      fontSize: [5, 6, 7],
+      lineHeight: 'limit',
+      fontWeight: 'bold',
+      letterSpacing: 'title'
     },
     body: {
       fontFamily: 'body',

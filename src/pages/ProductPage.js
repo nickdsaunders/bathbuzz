@@ -25,7 +25,7 @@ const ProductPage = () => {
             flexDirection: 'column',
             flex: 1
           }}>
-          <Heading as="h1">{product.title}</Heading>
+          <Heading variant="text.ultratitle">{product.title}</Heading>
           <Text>{product.variants[0].price}</Text>
           <Text>{product.description}</Text>
           <Button
