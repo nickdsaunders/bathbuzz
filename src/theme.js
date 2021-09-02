@@ -1,21 +1,6 @@
 const Theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace'
-  },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125
-  },
   colors: {
     darker: '#121217',
     dark: '#17171d',
@@ -48,11 +33,31 @@ const Theme = {
     primary: '#ec3750',
     accent: '#338eda'
   },
+  fonts: {
+    body: 'Poppins, sans-serif',
+    heading: 'Poppins, sans-serif',
+    monospace: 'Menlo, monospace'
+  },
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontWeights: {
+    body: 400,
+    heading: 900,
+    bold: 700
+  },
+  lineHeights: {
+    body: 1.625,
+    heading: 1.25
+  },
   text: {
     heading: {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading'
+    },
+    body: {
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body'
     }
   },
   radii: {
@@ -158,13 +163,12 @@ const Theme = {
         boxShadow: 'card',
         position: 'fixed',
         top: 0,
-        left: 0,
+        right: 0,
         width: '70%',
         maxWidth: '400px',
         zIndex: 2,
-        transform: 'translateX(-100%)',
-        transition: 'transform 0.3s ease-out',
-        padding: '3'
+        transform: 'translateX(+100%)',
+        transition: 'transform 0.3s ease-out'
       },
       drawerOpen: {
         variant: 'layout.flex.drawer',
@@ -172,7 +176,8 @@ const Theme = {
       },
       cartItems: {
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flexDirection: 'column'
       }
     }
   },

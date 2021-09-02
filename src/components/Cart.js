@@ -28,24 +28,31 @@ const Cart = () => {
           as="header"
           sx={{
             justifyContent: 'space-between',
-            flexDirection: 'row'
+            flexDirection: 'row',
+            mb: 2,
+            bg: 'purple',
+            p: 3,
+            color: 'white',
+            boxShadow: 'text'
           }}>
-          <Heading>This is the Cart</Heading>
-          <Close onClick={() => toggleCart()} />
+          <Flex variant="layout.flex.cartItems">
+            <Heading as="h3">Your Shopping Cart</Heading>
+          </Flex>
+
+          <Close color="white" onClick={() => toggleCart()} />
         </Flex>
 
         <Flex
           as="body"
           sx={{
-            justifyContent: 'space-between',
-            flexDirection: 'column'
+            justifyContent: 'flex-start',
+            flexDirection: 'column',
+            flex: 1,
+            p: 2
           }}>
           {checkout.lineItems?.length ? (
             checkout.lineItems.map((item) => (
-              <Grid columns={4} gap={1} key={item.id}>
-                <Flex variant="layout.flex.cartItems">
-                  <Close onClick={() => removeLineItem(item.id)} />
-                </Flex>
+              <Grid columns={5} gap={1} marginBottom={2} key={item.id}>
                 <Flex variant="layout.flex.cartItems">
                   <Image src={item.variant.image.src} />
                 </Flex>
@@ -53,12 +60,21 @@ const Cart = () => {
                   <Text>{item.title}</Text>
                 </Flex>
                 <Flex variant="layout.flex.cartItems">
-                  <Text>{item.variant.price}</Text>
+                  <Text>x {item.quantity}</Text>
+                </Flex>
+                <Flex variant="layout.flex.cartItems">
+                  <Text>${item.variant.price}</Text>
+                </Flex>
+                <Flex variant="layout.flex.cartItems">
+                  <Close onClick={() => removeLineItem(item.id)} />
                 </Flex>
               </Grid>
             ))
           ) : (
-            <div>Empty Cart</div>
+            <Flex variant="layout.flex.cartItems">
+              <Heading as="h4">Your Cart Is Empty</Heading>
+              <Text>Lets fix that.</Text>
+            </Flex>
           )}
         </Flex>
 
@@ -68,8 +84,15 @@ const Cart = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-          <Button>
-            <Link href={checkout.webUrl}>Checkout</Link>
+          <Button width="100%" mb={3}>
+            <Link
+              href={checkout.webUrl}
+              sx={{
+                textDecoration: 'none',
+                color: 'white'
+              }}>
+              Checkout
+            </Link>
           </Button>
         </Flex>
       </Flex>
