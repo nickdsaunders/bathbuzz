@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- const cartItems = checkout.lineItems;
+
+  const sumItems = (items) => {
+    let cartTotal = 0;
+    cartTotal += items;
+    return cartTotal;
+  };
+
+  const hereIt = cartItems.forEach(sumItems[i]); -->

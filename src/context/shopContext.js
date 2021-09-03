@@ -56,10 +56,16 @@ class ShopProvider extends Component {
     );
     this.setState({ checkout: checkout });
 
-    this.openCart();
+    this.toggleCart();
   };
 
-  removeLineItem = async () => {};
+  removeLineItem = async (lineItemIdsToRemove) => {
+    const checkout = await client.checkout.removeLineItems(
+      this.state.checkout.id,
+      lineItemIdsToRemove
+    );
+    this.setState({ checkout: checkout });
+  };
 
   fetchAllProducts = async () => {
     const products = await client.product.fetchAll();
@@ -79,17 +85,23 @@ class ShopProvider extends Component {
     });
   };
 
+  toggleMenu = () => {
+    this.setState((prevState) => {
+      return { isMenuOpen: !prevState.isMenuOpen };
+    });
+  };
+
   // closeCart = () => {
   //   this.setState({ isCartOpen: false });
   // };
 
-  openCart = () => {
-    this.setState({ isCartOpen: true });
-  };
+  // openCart = () => {
+  //   this.setState({ isCartOpen: true });
+  // };
 
-  closeMenu = () => {};
+  // closeMenu = () => {};
 
-  openMenu = () => {};
+  // openMenu = () => {};
 
   render() {
     return (
@@ -101,10 +113,11 @@ class ShopProvider extends Component {
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
           // closeCart: this.closeCart,
-          openCart: this.openCart,
-          closeMenu: this.closeMenu,
-          openMenu: this.openMenu,
-          toggleCart: this.toggleCart
+          // openCart: this.openCart,
+          // closeMenu: this.closeMenu,
+          // openMenu: this.openMenu,
+          toggleCart: this.toggleCart,
+          toggleMenu: this.toggleMenu
         }}>
         {this.props.children}
       </ShopContext.Provider>

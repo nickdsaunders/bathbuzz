@@ -1,21 +1,6 @@
 const Theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace'
-  },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125
-  },
   colors: {
     darker: '#121217',
     dark: '#17171d',
@@ -48,11 +33,51 @@ const Theme = {
     primary: '#ec3750',
     accent: '#338eda'
   },
+  fonts: {
+    body: 'Phantom Sans',
+    heading: 'Phantom Sans',
+    monospace: 'Menlo, monospace'
+  },
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontWeights: {
+    body: 400,
+    heading: 900,
+    bold: 700
+  },
+  lineHeights: {
+    body: 1.625,
+    heading: 1.25
+  },
   text: {
     heading: {
-      fontFamily: 'heading',
+      fontWeight: 'bold',
       lineHeight: 'heading',
-      fontWeight: 'heading'
+      mt: 0,
+      mb: 0
+    },
+    ultratitle: {
+      fontSize: [5, 6, 7],
+      lineHeight: 'limit',
+      fontWeight: 'bold',
+      letterSpacing: 'title'
+    },
+    title: {
+      fontSize: [4, 5, 6],
+      fontWeight: 'bold',
+      letterSpacing: 'title',
+      lineHeight: 'title'
+    },
+    subtitle: {
+      mt: 3,
+      fontSize: [2, 3],
+      fontWeight: 'body',
+      letterSpacing: 'headline',
+      lineHeight: 'subheading'
+    },
+    body: {
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body'
     }
   },
   radii: {
@@ -70,10 +95,17 @@ const Theme = {
   },
   buttons: {
     primary: {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      bg: 'blue'
     },
     icon: {
       fill: 'white',
+      cursor: 'pointer',
+      height: 40,
+      width: 40
+    },
+    close: {
+      color: 'black',
       cursor: 'pointer'
     }
   },
@@ -134,14 +166,58 @@ const Theme = {
   },
   layout: {
     box: {
-      drawer: {
+      drawerBackdrop: {
+        position: 'fixed',
+        width: '100%',
         height: '100%',
-        bg: 'red',
+        top: 0,
+        left: 0,
+        bg: '#00000090',
+        zIndex: 1
+      }
+    },
+    flex: {
+      drawer: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: '100%',
+        bg: 'elevated',
         boxShadow: 'card',
         position: 'fixed',
         top: 0,
+        right: 0,
+        width: '70%',
+        maxWidth: '400px',
+        zIndex: 2,
+        transform: 'translateX(+100%)',
+        transition: 'transform 0.3s ease-out'
+      },
+      drawerOpen: {
+        variant: 'layout.flex.drawer',
+        transform: 'translateX(0)'
+      },
+      drawerLeft: {
+        variant: 'layout.flex.drawer',
         left: 0,
-        width: '400px'
+        transform: 'translateX(-100%)'
+      },
+      drawerLeftOpen: {
+        variant: 'layout.flex.drawerLeft',
+        transform: 'translateX(0)'
+      },
+      drawerHeader: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        mb: 2,
+        bg: 'purple',
+        p: 3,
+        color: 'white',
+        boxShadow: 'text'
+      },
+      cartItems: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
       }
     }
   },
@@ -149,7 +225,7 @@ const Theme = {
     primary: {
       bg: 'elevated',
       color: 'text',
-      p: [3],
+      p: 3,
       borderRadius: 'extra',
       boxShadow: 'card',
       overflow: 'hidden'
