@@ -24,17 +24,7 @@ const Cart = () => {
     <>
       <Flex
         variant={isCartOpen ? 'layout.flex.drawerOpen' : 'layout.flex.drawer'}>
-        <Flex
-          as="header"
-          sx={{
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-            mb: 2,
-            bg: 'purple',
-            p: 3,
-            color: 'white',
-            boxShadow: 'text'
-          }}>
+        <Flex as="header" variant="layout.flex.drawerHeader">
           <Flex variant="layout.flex.cartItems">
             <Heading as="h3">Your Shopping Cart</Heading>
           </Flex>

@@ -61,6 +61,19 @@ const Theme = {
       fontWeight: 'bold',
       letterSpacing: 'title'
     },
+    title: {
+      fontSize: [4, 5, 6],
+      fontWeight: 'bold',
+      letterSpacing: 'title',
+      lineHeight: 'title'
+    },
+    subtitle: {
+      mt: 3,
+      fontSize: [2, 3],
+      fontWeight: 'body',
+      letterSpacing: 'headline',
+      lineHeight: 'subheading'
+    },
     body: {
       fontFamily: 'body',
       lineHeight: 'body',
@@ -87,7 +100,9 @@ const Theme = {
     },
     icon: {
       fill: 'white',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      height: 40,
+      width: 40
     },
     close: {
       color: 'black',
@@ -180,6 +195,24 @@ const Theme = {
       drawerOpen: {
         variant: 'layout.flex.drawer',
         transform: 'translateX(0)'
+      },
+      drawerLeft: {
+        variant: 'layout.flex.drawer',
+        left: 0,
+        transform: 'translateX(-100%)'
+      },
+      drawerLeftOpen: {
+        variant: 'layout.flex.drawerLeft',
+        transform: 'translateX(0)'
+      },
+      drawerHeader: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        mb: 2,
+        bg: 'purple',
+        p: 3,
+        color: 'white',
+        boxShadow: 'text'
       },
       cartItems: {
         alignItems: 'center',
