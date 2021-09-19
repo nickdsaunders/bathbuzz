@@ -80,6 +80,17 @@ const Theme = {
       fontWeight: 'body'
     }
   },
+  sizes: {
+    widePlus: 2048,
+    wide: 1536,
+    layoutPlus: 1200,
+    layout: 1024,
+    copyUltra: 980,
+    copyPlus: 768,
+    copy: 680,
+    narrowPlus: 600,
+    narrow: 512
+  },
   radii: {
     small: 4,
     default: 8,

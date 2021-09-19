@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import ShopProvider from './context/shopContext';
 import { ThemeProvider } from 'theme-ui';
 import theme from './theme';
-import './fonts/reg-bold.css';
+import './assets/fonts/reg-bold.css';
 
 ReactDOM.render(
   <React.StrictMode>

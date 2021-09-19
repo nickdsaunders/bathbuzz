@@ -13,7 +13,7 @@ const Home = () => {
   if (!products) return <div>Loadings...</div>;
 
   return (
-    <Box>
+    <Box sx={{ p: 3, maxWidth: 'wide', m: 'auto' }}>
       <Grid columns={[1, 2, 3]} gap={3}>
         {products.map((product) => (
           <Link to={`/products/${product.handle}`} key={product.id}>
