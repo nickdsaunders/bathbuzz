@@ -1,16 +1,7 @@
 import React, { useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router';
+import { useParams } from 'react-router';
 import { ShopContext } from '../context/shopContext';
-import {
-  Box,
-  Grid,
-  Image,
-  Text,
-  Button,
-  Heading,
-  Flex,
-  AspectImage
-} from 'theme-ui';
+import { Box, Grid, Image, Text, Button, Heading, Flex } from 'theme-ui';
 
 const ProductPage = () => {
   const { handle } = useParams();

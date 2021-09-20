@@ -13,14 +13,11 @@ function App() {
         <NavBar />
         <NavMenu />
         <Cart />
-
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/products/:handle">
-            <ProductPage />
-          </Route>
+          <Route path="/products/:handle" component={ProductPage}></Route>
         </Switch>
         <Footer />
       </Router>

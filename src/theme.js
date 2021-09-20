@@ -13,6 +13,7 @@ const Theme = {
     snow: '#f9fafc',
     white: '#ffffff',
     red: '#ec3750',
+    pink: '#FFA8E2',
     orange: '#ff8c37',
     yellow: '#f1c40f',
     green: '#33d6a6',
@@ -68,7 +69,6 @@ const Theme = {
       lineHeight: 'title'
     },
     subtitle: {
-      mt: 3,
       fontSize: [2, 3],
       fontWeight: 'body',
       letterSpacing: 'headline',

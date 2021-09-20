@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../context/shopContext';
 import {
-  Box,
   Text,
-  Container,
   Heading,
   Grid,
   Close,
   Flex,
   Image,
   Button,
-  Link
+  Link,
+  Box
 } from 'theme-ui';
 import Background from './Background';
 
@@ -38,7 +37,7 @@ const Cart = () => {
             justifyContent: 'flex-start',
             flexDirection: 'column',
             flex: 1,
-            p: 2
+            p: 3
           }}>
           {checkout.lineItems?.length ? (
             checkout.lineItems.map((item) => (
@@ -71,10 +70,21 @@ const Cart = () => {
         <Flex
           as="footer"
           sx={{
-            alignItems: 'center',
-            justifyContent: 'center'
+            p: 3,
+            flexDirection: 'column'
           }}>
-          <Button width="100%" mb={3}>
+          <Flex
+            sx={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              height: '50px',
+              alignItems: 'center'
+            }}>
+            <Text variant="text.subtitle">Subtotal:</Text>
+            <Text variant="text.subtitle">${checkout.subtotalPrice}</Text>
+          </Flex>
+
+          <Button sx={{ alignSelf: 'stretch' }}>
             <Link
               href={checkout.webUrl}
               sx={{

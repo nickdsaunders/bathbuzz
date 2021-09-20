@@ -20,10 +20,10 @@ const Footer = () => {
             The Green Blast
           </NavLink>
           <NavLink variant="text.subtitle" href="/" p={2}>
-            The Blue Berry
+            The Mellow Yellow
           </NavLink>
           <NavLink variant="text.subtitle" href="/" p={2}>
-            Sustainability
+            The Blue Berry
           </NavLink>
         </Flex>
         <Flex
