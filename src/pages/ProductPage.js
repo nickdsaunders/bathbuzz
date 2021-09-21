@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router';
+import { useParams } from 'react-router';
 import { ShopContext } from '../context/shopContext';
 import { Box, Grid, Image, Text, Button, Heading, Flex } from 'theme-ui';
 
@@ -16,19 +16,23 @@ const ProductPage = () => {
   if (!product.title) return <div>Loading...</div>;
 
   return (
-    <Box>
-      <Grid columns={[1, 2]}>
-        <Image src={product.images[0].src} />
+    <Box sx={{ p: 3, maxWidth: 'layoutPlus', m: 'auto' }}>
+      <Grid columns={[1, 2]} gap={5} m="auto">
+        <Flex justifyContent="center" alignItems="center">
+          <Image src={product.images[0].src} />
+        </Flex>
         <Flex
           sx={{
-            justifyContent: 'space-between',
             flexDirection: 'column',
-            flex: 1
+            alignItems: 'flex-start',
+            justifyContent: 'space-between'
           }}>
           <Heading variant="text.ultratitle">{product.title}</Heading>
-          <Text>{product.variants[0].price}</Text>
+          <Text variant="text.subtitle">${product.variants[0].price}</Text>
           <Text>{product.description}</Text>
+
           <Button
+            sx={{ alignSelf: 'stretch' }}
             variant="primary"
             onClick={() => {
               addItemToCheckout(product.variants[0].id, 1);

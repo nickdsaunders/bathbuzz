@@ -13,6 +13,7 @@ const Theme = {
     snow: '#f9fafc',
     white: '#ffffff',
     red: '#ec3750',
+    pink: '#FFA8E2',
     orange: '#ff8c37',
     yellow: '#f1c40f',
     green: '#33d6a6',
@@ -68,7 +69,6 @@ const Theme = {
       lineHeight: 'title'
     },
     subtitle: {
-      mt: 3,
       fontSize: [2, 3],
       fontWeight: 'body',
       letterSpacing: 'headline',
@@ -79,6 +79,17 @@ const Theme = {
       lineHeight: 'body',
       fontWeight: 'body'
     }
+  },
+  sizes: {
+    widePlus: 2048,
+    wide: 1536,
+    layoutPlus: 1200,
+    layout: 1024,
+    copyUltra: 980,
+    copyPlus: 768,
+    copy: 680,
+    narrowPlus: 600,
+    narrow: 512
   },
   radii: {
     small: 4,
@@ -96,7 +107,11 @@ const Theme = {
   buttons: {
     primary: {
       cursor: 'pointer',
-      bg: 'blue'
+      bg: 'blue',
+      color: 'white',
+      ':hover': {
+        opacity: '50%'
+      }
     },
     icon: {
       fill: 'white',
@@ -107,6 +122,14 @@ const Theme = {
     close: {
       color: 'black',
       cursor: 'pointer'
+    },
+    secondary: {
+      cursor: 'pointer',
+      bg: '#FF38BD',
+      color: 'white',
+      ':hover': {
+        opacity: '50%'
+      }
     }
   },
   styles: {
@@ -226,8 +249,8 @@ const Theme = {
       bg: 'elevated',
       color: 'text',
       p: 3,
-      borderRadius: 'extra',
-      boxShadow: 'card',
+      // borderRadius: 'extra',
+      // boxShadow: 'card',
       overflow: 'hidden'
     },
     sunken: {
