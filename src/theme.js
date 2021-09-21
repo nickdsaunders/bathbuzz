@@ -107,7 +107,11 @@ const Theme = {
   buttons: {
     primary: {
       cursor: 'pointer',
-      bg: 'blue'
+      bg: 'blue',
+      color: 'white',
+      ':hover': {
+        opacity: '50%'
+      }
     },
     icon: {
       fill: 'white',
@@ -118,6 +122,14 @@ const Theme = {
     close: {
       color: 'black',
       cursor: 'pointer'
+    },
+    secondary: {
+      cursor: 'pointer',
+      bg: '#FF38BD',
+      color: 'white',
+      ':hover': {
+        opacity: '50%'
+      }
     }
   },
   styles: {
@@ -237,8 +249,8 @@ const Theme = {
       bg: 'elevated',
       color: 'text',
       p: 3,
-      borderRadius: 'extra',
-      boxShadow: 'card',
+      // borderRadius: 'extra',
+      // boxShadow: 'card',
       overflow: 'hidden'
     },
     sunken: {

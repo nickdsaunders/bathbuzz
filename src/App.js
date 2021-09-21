@@ -8,7 +8,7 @@ import ProductPage from './pages/ProductPage';
 
 function App() {
   return (
-    <div style={{ height: '100vh' }}>
+    <>
       <Router>
         <NavBar />
         <NavMenu />
@@ -21,7 +21,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-    </div>
+    </>
   );
 }
 

@@ -11,58 +11,42 @@ import {
 
 const Hero = () => {
   return (
-    <Box
-      backgroundColor="#FFA8E2"
-      width="50px"
-      position="relative"
-      height="70vh">
-      {/* <Flex
+    <Box sx={{ bg: '#FFA8E2', position: 'relative', height: '75vh' }}>
+      <Flex
         sx={{
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '50%',
-          bg: 'red'
-        }}> */}
-      <Image
-        margin="auto"
-        height="100%"
-        objectFit="contain"
-        objectPosition="center"
-        src="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/Bath_Bomb_-_Product-4_-_nobg_1.png?v=1610055851.jpg"
-      />
-      {/* <Text
-        className="tracking-in-expand-fwd"
-        position="absolute"
-        bottom="20%"
-        width="100%"
-        textAlign="center"
-        color="white"
-        fontWeight="bold"
-        fontSize="4rem">
-        Introducing Bath Bombs
-      </Text> */}
-      <Flex
-        sx={{
-          flexDirection: 'column',
-          position: 'absolute',
-          bottom: '20%',
-          width: '100%',
-          justifyContent: 'center'
+          overflow: 'hidden'
         }}>
-        <Text
-          sx={{ textAlign: 'center', flex: 1 }}
-          variant="text.ultratitle"
-          color="white">
+        <Image
+          sx={{
+            display: 'block',
+            margin: 'auto',
+            objectFit: 'contain',
+            objectPosition: 'center',
+            width: '50%',
+            position: 'relative'
+          }}
+          src="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/Bath_Bomb_-_Product-4_-_nobg_1.png?v=1610055851.jpg"
+        />
+
+        <Heading
+          sx={{
+            variant: 'text.ultratitle',
+            color: 'white',
+            position: 'relative',
+            bottom: '100px'
+          }}>
           Introducing Bath Bombs
-        </Text>
+        </Heading>
         <Button
-          width="25%"
-          backgroundColor="#FF38BD"
-          color="white"
-          _hover={{ opacity: '70%' }}
-          position="absolute"
-          bottom="10%">
+          sx={{
+            variant: 'buttons.secondary',
+            width: '25%',
+            position: 'relative',
+            bottom: '100px'
+          }}>
           Shop Now
         </Button>
       </Flex>
