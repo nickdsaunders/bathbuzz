@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ShopProvider from './context/shopContext';
 import { ThemeProvider } from 'theme-ui';
-import theme from './theme';
+import theme from './theme/theme';
 import './assets/fonts/reg-bold.css';
 
 ReactDOM.render(

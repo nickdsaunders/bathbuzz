@@ -104,6 +104,33 @@ const Theme = {
     card: '0 4px 8px rgba(0, 0, 0, 0.125)',
     elevated: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125)'
   },
+
+  images: {
+    hero: {
+      // WebkitTapHighlightColor: 'transparent',
+      // transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
+      // WebkitAnimation:
+      //   'tracking-in-contract 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both',
+      // "@WebkitKeyframesTrackingInContract": {
+      //   '0%': {
+      //     letter-spacing: 1em;
+      //     opacity: 0;
+      //   }
+      //   '40%': {
+      //     opacity: 0.6;
+      //   }
+      //   '100%': {
+      //     letter-spacing: normal;
+      //     opacity: 1;
+      //   }
+      // },
+      margin: 'auto',
+      objectFit: 'contain',
+      objectPosition: 'center',
+      width: ['100%', '65%'],
+      position: 'relative'
+    }
+  },
   buttons: {
     primary: {
       cursor: 'pointer',

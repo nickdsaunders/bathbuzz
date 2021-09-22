@@ -67,6 +67,21 @@ class ShopProvider extends Component {
     this.setState({ checkout: checkout });
   };
 
+  updateLineItem = async (id, quantity) => {
+    const lineItemsToUpdate = [
+      {
+        id,
+        quantity: parseInt(quantity)
+      }
+    ];
+
+    const checkout = await client.checkout.updateLineItems(
+      this.state.checkout.id,
+      lineItemsToUpdate
+    );
+    this.setState({ checkout: checkout });
+  };
+
   fetchAllProducts = async () => {
     const products = await client.product.fetchAll();
     this.setState({ products: products });
@@ -112,6 +127,7 @@ class ShopProvider extends Component {
           fetchProductWithHandle: this.fetchProductWithHandle,
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
+          updateLineItem: this.updateLineItem,
           // closeCart: this.closeCart,
           // openCart: this.openCart,
           // closeMenu: this.closeMenu,

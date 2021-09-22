@@ -16,7 +16,7 @@ const ProductPage = () => {
   if (!product.title) return <div>Loading...</div>;
 
   return (
-    <Box sx={{ p: 3, maxWidth: 'layoutPlus', m: 'auto' }}>
+    <Box sx={{ p: 3, maxWidth: 'layoutPlus', mx: 'auto', my: [0, '10%'] }}>
       <Grid columns={[1, 2]} gap={5} m="auto">
         <Flex justifyContent="center" alignItems="center">
           <Image src={product.images[0].src} />
