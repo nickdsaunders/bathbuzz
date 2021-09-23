@@ -15,6 +15,8 @@ class ShopProvider extends Component {
       product: {},
       products: [],
       checkout: {},
+      collections: [],
+      collection: {},
       isCartOpen: false,
       isMenuOpen: false
     };
@@ -94,6 +96,18 @@ class ShopProvider extends Component {
     return product;
   };
 
+  fetchCollectionsWithProducts = async () => {
+    const collections = await client.collection.fetchAllWithProducts();
+    this.setState({ collections: collections });
+  };
+
+  fetchCollectionWithId = async (id) => {
+    const collection = await client.collection.fetchWithProducts(id);
+    this.setState({ collection: collection });
+
+    return collection;
+  };
+
   toggleCart = () => {
     this.setState((prevState) => {
       return { isCartOpen: !prevState.isCartOpen };
@@ -106,18 +120,6 @@ class ShopProvider extends Component {
     });
   };
 
-  // closeCart = () => {
-  //   this.setState({ isCartOpen: false });
-  // };
-
-  // openCart = () => {
-  //   this.setState({ isCartOpen: true });
-  // };
-
-  // closeMenu = () => {};
-
-  // openMenu = () => {};
-
   render() {
     return (
       <ShopContext.Provider
@@ -128,10 +130,8 @@ class ShopProvider extends Component {
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
           updateLineItem: this.updateLineItem,
-          // closeCart: this.closeCart,
-          // openCart: this.openCart,
-          // closeMenu: this.closeMenu,
-          // openMenu: this.openMenu,
+          fetchCollectionsWithProducts: this.fetchCollectionsWithProducts,
+          fetchCollectionWithId: this.fetchCollectionWithId,
           toggleCart: this.toggleCart,
           toggleMenu: this.toggleMenu
         }}>

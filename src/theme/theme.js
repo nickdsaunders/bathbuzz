@@ -45,6 +45,10 @@ const Theme = {
     heading: 900,
     bold: 700
   },
+  letterSpacings: {
+    title: '-0.009em',
+    headline: '0.009em'
+  },
   lineHeights: {
     body: 1.625,
     heading: 1.25
@@ -268,6 +272,11 @@ const Theme = {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column'
+      },
+      centerColumn: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
       }
     }
   },
@@ -278,7 +287,8 @@ const Theme = {
       p: 3,
       // borderRadius: 'extra',
       // boxShadow: 'card',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      textDecoration: 'none'
     },
     sunken: {
       bg: 'sunken',
@@ -287,7 +297,6 @@ const Theme = {
     },
     interactive: {
       variant: 'cards.primary',
-      textDecoration: 'none',
       WebkitTapHighlightColor: 'transparent',
       transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
       ':hover,:focus': {

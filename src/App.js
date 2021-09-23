@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
+import CollectionsPage from './pages/CollectionsPage';
 
 function App() {
   return (
@@ -14,10 +15,9 @@ function App() {
         <NavMenu />
         <Cart />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/products/:handle" component={ProductPage}></Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/products/:handle" component={ProductPage} />
+          <Route path="/collections" component={CollectionsPage} />
         </Switch>
         <Footer />
       </Router>

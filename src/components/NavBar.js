@@ -16,18 +16,6 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   const { toggleCart, toggleMenu, checkout } = useContext(ShopContext);
 
-  // const items = checkout.lineItems;
-  // console.log('checkoutItems', items.length);
-  // let totalQty = 0;
-
-  // if (items.length > 0) {
-  //   items.forEach((item) => {
-  //     totalQty += item.quantity;
-  //   });
-  // }
-
-  // console.log('total', totalQty);
-
   return (
     <Flex
       sx={{
@@ -52,46 +40,17 @@ const NavBar = () => {
           onClick={() => toggleCart()}
         />
 
-        {/* {checkout.lineItems?.length ? (
-          checkout.lineItems
-            .map((item) => item.quantity)
-            .reduce((a, b) => (
-              <Badge
-                sx={{
-                  bg: 'red',
-                  borderRadius: 'circle'
-                }}>
-                {a + b}
-              </Badge>
-            ))
-        ) : (
-          <Badge
-            sx={{
-              bg: 'red',
-              borderRadius: 'circle'
-            }}>
-            0
-          </Badge>
-        )} */}
-
-        {checkout.lineItems?.length &&
-          checkout.lineItems
-            .map((item) => item.quantity)
-            .reduce((a, b) => a + b)}
-
-        {/* {checkout.lineItems?.length ? (
-          checkout.lineItems
-            .map((item) => item.quantity)
-            .reduce((a, b) => a + b)
-        ) : (
-          <Badge
-            sx={{
-              bg: 'red',
-              borderRadius: 'circle'
-            }}>
-            {checkout.lineItems?.length}
-          </Badge>
-        )} */}
+        <Badge
+          sx={{
+            bg: '#FF38BD',
+            borderRadius: 'circle'
+          }}>
+          {checkout.lineItems?.length
+            ? checkout.lineItems
+                .map((item) => item.quantity)
+                .reduce((a, b) => a + b)
+            : checkout.lineItems?.length}
+        </Badge>
       </Box>
     </Flex>
   );

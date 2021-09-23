@@ -11,6 +11,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     fetchProductWithHandle(handle);
+    window.scrollTo(0, 0);
   }, [fetchProductWithHandle, handle]);
 
   if (!product.title) return <div>Loading...</div>;

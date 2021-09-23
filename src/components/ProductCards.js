@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { ShopContext } from '../context/shopContext';
-import { Box, Grid, Text, Image, Card, Link } from 'theme-ui';
+import { Text, Image, Card, Flex, Link } from 'theme-ui';
+import { Link as ReactLink } from 'react-router-dom';
 
 const ProductCards = () => {
   const { fetchAllProducts, products } = useContext(ShopContext);
@@ -11,20 +12,27 @@ const ProductCards = () => {
 
   if (!products) return <div>Loadings...</div>;
 
-  console.log(products);
-
   return (
-    <Grid columns={[1, 2, 3]} gap={3}>
+    <>
       {products.map((product) => (
-        <Link href={`/products/${product.handle}`} key={product.id}>
-          <Card variant="interactive">
+        <Link
+          as={ReactLink}
+          sx={{ textDecoration: 'none' }}
+          textDecoration="none"
+          to={`/products/${product.handle}`}
+          key={product.id}>
+          <Card variant="interactive" textDecoration="none">
             <Image src={product.images[0].src} />
-            <Text>{product.title}</Text>
-            <Text>${product.variants[0].price}</Text>
+            <Flex sx={{ justifyContent: 'space-between' }}>
+              <Text sx={{ variant: 'text.subtitle' }}>{product.title}</Text>
+              <Text sx={{ variant: 'text.subtitle' }}>
+                ${product.variants[0].price}
+              </Text>
+            </Flex>
           </Card>
         </Link>
       ))}
-    </Grid>
+    </>
   );
 };
 

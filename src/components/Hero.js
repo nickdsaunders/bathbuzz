@@ -6,31 +6,23 @@ import {
   Image,
   Container,
   Flex,
-  Heading
+  Heading,
+  Link
 } from '@theme-ui/components';
 import '../index.css';
 import { TrackingInContract, BounceInTop } from '../theme/Animations';
+import { Link as ReactLink } from 'react-router-dom';
 
 const Hero = () => {
   return (
     <Flex
       sx={{
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        variant: 'layout.flex.centerColumn',
         bg: 'pink',
-        height: '75vh',
-        overflow: 'hidden'
+        height: '75vh'
       }}>
-      <Flex
-        sx={{
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          overflow: 'hidden'
-        }}>
+      <Flex variant="layout.flex.centerColumn">
         <Image
-          //   className="bounce-in-top"
           sx={{
             animationDelay: '0s',
             animationDuration: '1.5s',
@@ -43,7 +35,6 @@ const Hero = () => {
         />
 
         <Heading
-          //   className="tracking-in-contract"
           sx={{
             animationDelay: '0s',
             animationDuration: '1.2s',
@@ -57,6 +48,7 @@ const Hero = () => {
           }}>
           Introducing Bath Bombs
         </Heading>
+
         <Button
           sx={{
             variant: 'buttons.secondary',

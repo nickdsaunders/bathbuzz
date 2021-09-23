@@ -43,8 +43,8 @@ const NavMenu = () => {
             flex: 1,
             p: 2
           }}>
-          <NavLink variant="text.subtitle" href="#!" p={2}>
-            About Us
+          <NavLink variant="text.subtitle" href="/collections" p={2}>
+            Shop Collections
           </NavLink>
           <NavLink variant="text.subtitle" href="#!" p={2}>
             Learn More

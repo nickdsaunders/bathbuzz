@@ -1,7 +1,7 @@
 import { keyframes } from '@emotion/react';
 
 export const TrackingInContract = keyframes({
-  '0%': { opacity: 0, letterSpacing: 10 },
+  '0%': { opacity: 0, letterSpacing: 5 },
   '40%': { opacity: 0.6 },
   '100%': { letterSpacing: 'normal', opacity: 1 }
 });
