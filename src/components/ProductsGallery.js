@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ShopContext } from '../context/shopContext';
-import { Box, Grid, Text, Image, Card, Link, Select } from 'theme-ui';
-import { Link as ReactLink } from 'react-router-dom';
+import { Grid } from 'theme-ui';
+
 import ProductCards from './ProductCards';
 import Collections from './Collections';
 

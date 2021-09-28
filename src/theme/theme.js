@@ -111,23 +111,6 @@ const Theme = {
 
   images: {
     hero: {
-      // WebkitTapHighlightColor: 'transparent',
-      // transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
-      // WebkitAnimation:
-      //   'tracking-in-contract 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both',
-      // "@WebkitKeyframesTrackingInContract": {
-      //   '0%': {
-      //     letter-spacing: 1em;
-      //     opacity: 0;
-      //   }
-      //   '40%': {
-      //     opacity: 0.6;
-      //   }
-      //   '100%': {
-      //     letter-spacing: normal;
-      //     opacity: 1;
-      //   }
-      // },
       margin: 'auto',
       objectFit: 'contain',
       objectPosition: 'center',

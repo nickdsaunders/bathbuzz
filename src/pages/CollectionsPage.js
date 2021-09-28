@@ -1,17 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ShopContext } from '../context/shopContext';
-import { Box, Grid, Text, Image, Card, Link, Select } from 'theme-ui';
-import { Link as ReactLink } from 'react-router-dom';
-import ProductCards from '../components/ProductCards';
+import { Box, Heading } from 'theme-ui';
 import Collections from '../components/Collections';
 
 const CollectionsPage = () => {
-  const {
-    fetchAllProducts,
-    products,
-    fetchCollectionsWithProducts,
-    collections
-  } = useContext(ShopContext);
+  const { fetchAllProducts, products, fetchCollectionsWithProducts } =
+    useContext(ShopContext);
 
   useEffect(() => {
     fetchAllProducts();
@@ -23,7 +17,6 @@ const CollectionsPage = () => {
   return (
     <>
       <Box sx={{ p: 3, maxWidth: 'layoutPlus', mx: 'auto' }}>
-        {/* <ProductCards /> */}
         <Collections />
       </Box>
     </>

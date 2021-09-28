@@ -1,18 +1,22 @@
 import React from 'react';
 import { Box } from 'theme-ui';
-import Collections from '../components/Collections';
 import Hero from '../components/Hero';
 import ImageWithText from '../components/ImageWithText';
 import ProductsGallery from '../components/ProductsGallery';
+import RichText from '../components/RichText';
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Box sx={{ p: 3, maxWidth: 'wide', m: 'auto' }}>
-        <ProductsGallery />
-        {/* <Collections /> */}
 
+      <Box sx={{ p: 3, maxWidth: 'wide', m: 'auto' }}>
+        <RichText
+          heading="The relaxation you’ve been waiting for."
+          text="Our Bath bombs guarantee a fun, relaxing, and colorful night."
+        />
+        <ProductsGallery />
+        <RichText heading="Treat yourself!" />
         <ImageWithText
           image="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/premium-bath-bombs.jpg?v=1610066758"
           heading="We Believe ..."

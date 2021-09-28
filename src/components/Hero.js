@@ -1,19 +1,15 @@
 import React from 'react';
-import {
-  Box,
-  Button,
-  Text,
-  Image,
-  Container,
-  Flex,
-  Heading,
-  Link
-} from '@theme-ui/components';
+import { Button, Image, Flex, Heading } from '@theme-ui/components';
 import '../index.css';
 import { TrackingInContract, BounceInTop } from '../theme/Animations';
-import { Link as ReactLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Hero = () => {
+  let history = useHistory();
+  const handleClick = () => {
+    history.push('/collections');
+  };
+
   return (
     <Flex
       sx={{
@@ -50,6 +46,7 @@ const Hero = () => {
         </Heading>
 
         <Button
+          onClick={handleClick}
           sx={{
             variant: 'buttons.secondary',
             width: ['50%', '25%'],

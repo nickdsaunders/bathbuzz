@@ -9,7 +9,6 @@ import {
   Image,
   Button,
   Link,
-  Box,
   Input
 } from 'theme-ui';
 import Background from './Background';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Box, Grid, Image, Flex, NavLink } from 'theme-ui';
 
 const Footer = () => {

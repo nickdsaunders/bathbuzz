@@ -1,34 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/shopContext';
-import { Grid, Text, Image, Card, Link, Select } from 'theme-ui';
+import { Grid, Text, Image, Card, Link, Select, Flex, Heading } from 'theme-ui';
 import { Link as ReactLink } from 'react-router-dom';
 
 const Collections = () => {
   const {
-    fetchAllProducts,
-    products,
     fetchCollectionsWithProducts,
     collections,
     fetchCollectionWithId,
     collection
   } = useContext(ShopContext);
 
-  const [collectionId, setCollectionId] = useState();
+  const initialId = collections.map((collection) => collection.id);
+  const [collectionId, setCollectionId] = useState(initialId[0]);
 
   const handleChange = (e) => {
     setCollectionId(e.target.value);
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchCollectionsWithProducts();
-    fetchAllProducts();
     fetchCollectionWithId(collectionId);
-  }, [
-    fetchCollectionsWithProducts,
-    fetchAllProducts,
-    fetchCollectionWithId,
-    collectionId
-  ]);
+  }, [collectionId]);
 
   if (!collections) return <div>Loadings...</div>;
   console.log('collectionId', typeof collectionId);
@@ -38,9 +32,10 @@ const Collections = () => {
 
   return (
     <>
+      <Heading variant="heading.title">Shop Collections</Heading>
+
       <Select
         sx={{ my: 1 }}
-        // defaultValue={collections[0].id}
         value={collectionId}
         onChange={handleChange}
         name="collections">
@@ -53,31 +48,23 @@ const Collections = () => {
         })}
       </Select>
 
-      <Grid columns={[1, 2, 3]} gap={3}>
-        {/* {!collection &&
-          products.map((product) => (
-            <Link
-              to={`/products/${product.handle}`}
-              key={product.id}
-              as={ReactLink}>
-              <Card variant="interactive">
-                <Image src={product.images[0].src} />
-                <Text>{product.title}</Text>
-                <Text>${product.variants[0].price}</Text>
-              </Card>
-            </Link>
-          ))} */}
-
+      <Grid columns={[1, 2, 3]} gap={3} marginY="5%">
         {collection.products?.length &&
           collection.products.map((product) => (
             <Link
+              as={ReactLink}
+              sx={{ textDecoration: 'none' }}
+              textDecoration="none"
               to={`/products/${product.handle}`}
-              key={product.id}
-              as={ReactLink}>
-              <Card variant="interactive">
+              key={product.id}>
+              <Card variant="interactive" textDecoration="none">
                 <Image src={product.images[0].src} />
-                <Text>{product.title}</Text>
-                <Text>${product.variants[0].price}</Text>
+                <Flex sx={{ justifyContent: 'space-between' }}>
+                  <Text sx={{ variant: 'text.subtitle' }}>{product.title}</Text>
+                  <Text sx={{ variant: 'text.subtitle' }}>
+                    ${product.variants[0].price}
+                  </Text>
+                </Flex>
               </Card>
             </Link>
           ))}
