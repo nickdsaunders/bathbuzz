@@ -45,6 +45,10 @@ const Theme = {
     heading: 900,
     bold: 700
   },
+  letterSpacings: {
+    title: '-0.009em',
+    headline: '0.009em'
+  },
   lineHeights: {
     body: 1.625,
     heading: 1.25
@@ -103,6 +107,16 @@ const Theme = {
     small: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 2px 4px rgba(0, 0, 0, 0.0625)',
     card: '0 4px 8px rgba(0, 0, 0, 0.125)',
     elevated: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125)'
+  },
+
+  images: {
+    hero: {
+      margin: 'auto',
+      objectFit: 'contain',
+      objectPosition: 'center',
+      width: ['100%', '65%'],
+      position: 'relative'
+    }
   },
   buttons: {
     primary: {
@@ -241,6 +255,11 @@ const Theme = {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column'
+      },
+      centerColumn: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
       }
     }
   },
@@ -251,7 +270,8 @@ const Theme = {
       p: 3,
       // borderRadius: 'extra',
       // boxShadow: 'card',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      textDecoration: 'none'
     },
     sunken: {
       bg: 'sunken',
@@ -260,7 +280,6 @@ const Theme = {
     },
     interactive: {
       variant: 'cards.primary',
-      textDecoration: 'none',
       WebkitTapHighlightColor: 'transparent',
       transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
       ':hover,:focus': {

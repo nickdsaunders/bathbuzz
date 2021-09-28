@@ -9,12 +9,12 @@ import {
   Image,
   Button,
   Link,
-  Box
+  Input
 } from 'theme-ui';
 import Background from './Background';
 
 const Cart = () => {
-  const { isCartOpen, checkout, removeLineItem, toggleCart } =
+  const { isCartOpen, checkout, removeLineItem, updateLineItem, toggleCart } =
     useContext(ShopContext);
 
   console.log(checkout);
@@ -49,7 +49,12 @@ const Cart = () => {
                   <Text>{item.title}</Text>
                 </Flex>
                 <Flex variant="layout.flex.cartItems">
-                  <Text>x {item.quantity}</Text>
+                  <Input
+                    type="number"
+                    name="quantity"
+                    value={item.quantity}
+                    onChange={(e) => updateLineItem(item.id, e.target.value)}
+                  />
                 </Flex>
                 <Flex variant="layout.flex.cartItems">
                   <Text>${item.variant.price}</Text>

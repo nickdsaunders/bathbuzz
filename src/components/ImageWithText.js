@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Text, Image, Container, Flex, Heading } from 'theme-ui';
+import { Box, Text, Image, Flex, Heading } from 'theme-ui';
 
 const ImageWithText = ({ reverse, image, heading, text }) => {
   const reverseSection = reverse ? 'row-reverse' : 'row';
@@ -19,8 +19,8 @@ const ImageWithText = ({ reverse, image, heading, text }) => {
             alignItems: 'center',
             p: '2rem'
           }}>
-          <Heading>{heading}</Heading>
-          <Text>{text}</Text>
+          <Heading variant="text.title">{heading}</Heading>
+          <Text variant="text.subtitle">{text}</Text>
         </Flex>
       </Flex>
     </Box>

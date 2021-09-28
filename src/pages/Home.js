@@ -1,46 +1,36 @@
-import React, { useContext, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-import { Box, Grid, Text, Image, Card, Link } from 'theme-ui';
+import React from 'react';
+import { Box } from 'theme-ui';
 import Hero from '../components/Hero';
 import ImageWithText from '../components/ImageWithText';
-import { ShopContext } from '../context/shopContext';
+import ProductsGallery from '../components/ProductsGallery';
+import RichText from '../components/RichText';
 
 const Home = () => {
-  const { fetchAllProducts, products } = useContext(ShopContext);
-
-  useEffect(() => {
-    fetchAllProducts();
-  }, [fetchAllProducts]);
-
-  if (!products) return <div>Loadings...</div>;
-
-  console.log(products);
-
   return (
     <>
       <Hero />
+
       <Box sx={{ p: 3, maxWidth: 'wide', m: 'auto' }}>
-        <Grid columns={[1, 2, 3]} gap={3}>
-          {products.map((product) => (
-            <Link href={`/products/${product.handle}`} key={product.id}>
-              <Card variant="interactive">
-                <Image src={product.images[0].src} />
-                <Text>{product.title}</Text>
-                <Text>${product.variants[0].price}</Text>
-              </Card>
-            </Link>
-          ))}
-        </Grid>
+        <RichText
+          heading="The relaxation you’ve been waiting for."
+          text="Our Bath bombs guarantee a fun, relaxing, and colorful night."
+        />
+        <ProductsGallery />
+        <RichText heading="Treat yourself!" />
         <ImageWithText
           image="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/premium-bath-bombs.jpg?v=1610066758"
-          heading="Heading"
-          text="I'm baby kale chips twee skateboard tattooed, DIY iPhone ugh mixtape tumeric unicorn narwhal. Iceland shoreditch authentic, sartorial vegan twee flannel banh mi bushwick retro farm-to-table single-origin coffee. "
+          heading="We Believe ..."
+          text="We believe in making effective products from fresh, organic fruit and vegetables, the finest essential oils, and safe synthetics.
+
+          We invent our own products and fragrances. We make them fresh by hand using little or no preservative or packaging, using only vegetarian ingredients, and tell you when they were made.
+          
+          We believe in buying ingredients only from companies that do not commission tests on animals and in testing our products on humans."
         />
         <ImageWithText
           reverse
           image="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/bath-bomb-and-candle.jpg?v=1610066758"
-          heading="Heading"
-          text="I'm baby kale chips twee skateboard tattooed, DIY iPhone ugh mixtape tumeric unicorn narwhal. Iceland shoreditch authentic, sartorial vegan twee flannel banh mi bushwick retro farm-to-table single-origin coffee. "
+          heading="What Does Citrus Do for My Skin and Hair?"
+          text="Citrus is naturally filled with brightening vitamin C, along with other vital nutrients that tone and detoxify your skin, leaving it looking and feeling refreshed."
         />
       </Box>
     </>

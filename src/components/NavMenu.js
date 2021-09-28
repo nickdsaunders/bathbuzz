@@ -1,20 +1,7 @@
 import React, { useContext } from 'react';
-
-import {
-  Box,
-  Text,
-  Container,
-  Heading,
-  Grid,
-  Close,
-  Flex,
-  Image,
-  Button,
-  Link,
-  NavLink
-} from 'theme-ui';
-
+import { Heading, Close, Flex, NavLink } from 'theme-ui';
 import Background from './Background';
+import { Link as ReactLink } from 'react-router-dom';
 
 import { ShopContext } from '../context/shopContext';
 
@@ -43,8 +30,12 @@ const NavMenu = () => {
             flex: 1,
             p: 2
           }}>
-          <NavLink variant="text.subtitle" href="#!" p={2}>
-            About Us
+          <NavLink
+            as={ReactLink}
+            variant="text.subtitle"
+            to={'/collections'}
+            p={2}>
+            Shop Collections
           </NavLink>
           <NavLink variant="text.subtitle" href="#!" p={2}>
             Learn More
